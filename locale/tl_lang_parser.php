@@ -172,7 +172,7 @@ for( $i = $begin_line; $i < $lines_eng_count; $i++ )
 				$k = $lines_old_count; // exit more parsing old file
 			}
 		}
-		
+	/*	原来的算法是mege两个问文件，改为替换（如果找到了，也需要替换为新的我所需要的语言）
 		if ($bLocalized)
 		{
 	        echo "Keep existing localization on file to be updated:\n".
@@ -182,10 +182,17 @@ for( $i = $begin_line; $i < $lines_eng_count; $i++ )
         	$out .= $localizedLine;
 		} 
 		else 
+	*/	
 		{
+	/*		
 	        echo "Localization doesn't exists. Copy from master file to file to be updated:\n".
 			"-----------------------------------------\n".
 			trim($lines_eng[$i]). "\n";
+	*/	
+		echo "Operate line. Copy from master file to file to be updated:\n".
+			"-----------------------------------------\n".
+			trim($lines_eng[$i]). "\n";
+			
 			//add a todo on newly added lines
 		    //$out .= trim($lines_eng[$i]). " //TODO: localize\r\n";
 			$out .= $lines_eng[$i];
