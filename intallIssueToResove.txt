@@ -1,0 +1,15 @@
+1、在安装之前需要在根目录下创建一个config_db.inc.php的数据库配置文件，并赋予写权限，否则安装完成之后手工创建（有错误提示（安装过程需要testlink-1.9.14目录的写权限，以便在testlink-1.9.14下创建config_db.inc.php文件））
+  ....../testlink-1.9.14/config_db.inc.php）
+2、tl_lang_parser.php的使用方法：
+    （从这里获取修改之后的文件：https://github.com/haojile/testlink-code/blob/haojile-testlink-myuse/locale/tl_lang_parser.php）
+  ....../testlink-1.9.14/locale/tl_lang_parser.php
+   修改tl_lang_parser.php中的下面的语句，表示要从替换成中文：
+          $file_eng = 'zh_CN/strings.txt’;
+    在....../testlink-1.9.14/locale目录运行的命令行：
+    php tl_lang_parser.php ./en_GB/strings.txt > report.txt
+    这个命令行表示，将en_GB/strings.txt（系统默认使用的是这个）中的字段替换成中文的
+3、上面的语言的配置，在config.inc.php也是可以配置的(如下所示)，但是没有起作用，后续再看一下
+     ....../testlink-1.9.14/config.inc.php
+           $tlCfg->default_language = 'zh_CN';
+    
+    
